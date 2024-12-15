@@ -19,11 +19,16 @@ public class Main {
             matrix[v-1][u-1] = 1;
         }
         FileWriter writer = new FileWriter("output.txt");
-        for(int[] t:matrix){
-            for(int i:t){
-                writer.write(i+ " ");
+        for(int i =0; i<n; i++){
+            int count = 0;
+            String str = new String();
+            for(int k = 0;k < n; k++){
+                if(matrix[i][k]==1){
+                    count++;
+                    str+= (k+1) + " ";
+                }
             }
-            writer.write("\n");
+            writer.write(count + " " + str + "\n");
         }
         writer.close();
     }
